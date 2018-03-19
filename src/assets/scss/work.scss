@@ -1,0 +1,88 @@
+@import "config.scss";
+@import "animate.scss";
+.work-container{
+  max-width:960px;
+  margin:0 auto;
+}
+.case{
+  width:100%;
+  display:flex!important;
+  flex-wrap: wrap;
+  padding:40px 20px;
+  .desc{
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    animation-duration: 1s;
+    animation-delay:1s;
+    animation-fill-mode: both;
+    animation-name:fadeIn;
+    @media ($md) {
+      width: 30%;
+      margin-top: 0px;
+    }
+    text-align:left;
+    font-style: italic;
+    h2{
+      font-family: $fontHead;
+      font-weight: 600;
+      @include font-size(32px);
+      //font-family: 'Rajdhani', sans-serif;
+    }
+    .ctrl{
+      .view-site {
+        svg{
+          fill:#fff;
+        }
+        @media ($md) {
+          margin-right: 0px;
+        }
+        margin-right: auto;
+      }
+      .more-btn{
+        text-align:left;
+        margin-right:20px;
+        @media ($md) {
+          margin-left: 0px;
+        }
+        margin-left: auto;
+        .symbol{
+          .o-c{
+            stroke:#fff
+          }
+          .i-c{
+            fill:#fff
+          }
+        }
+      }
+    }
+  }
+  .bowser-outer{
+    animation-duration: 1s;
+    animation-delay:.5s;
+    animation-fill-mode: both;
+    animation-name:fadeIn;
+    width: 100%;
+    @media ($md) {
+      width: 61.8%;
+    }
+  }
+  &:nth-child(odd){
+    .desc{
+      @media ($md) {
+        order:1;
+        margin-left:40px;
+        margin-right:0px;
+      }
+    }
+  }
+  &:nth-child(even){
+    .desc{
+      @media ($md) {
+        order:-1;
+        margin-left:0px;
+        margin-right:40px;
+      }
+    }
+  }
+}

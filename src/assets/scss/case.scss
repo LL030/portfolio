@@ -1,0 +1,118 @@
+@import "config.scss";
+@import "animate.scss";
+.work-detail{
+  position: relative;
+  animation-duration: 1s;
+  animation-delay:1s;
+  animation-fill-mode: both;
+  animation-name:fadeIn;
+  .macbook-outer{
+    width: 80%;
+    margin:auto;
+    margin-top: 30px;
+  }
+  .div-spacing-w{
+    width:100%;
+    height:20px;
+    display:block;
+  }
+  .content{
+    width:80%;
+    //min-height:100vh;
+    padding-top: 30px;
+    margin-right:5%;
+    margin-left:15%;
+    opacity: 0;
+    
+    .content-title{
+      font-family: $fontHead;
+      @include font-size(36px);
+      color:$color01;
+      //padding-bottom:100px;
+      //font-family: 'Rajdhani', sans-serif;
+    }
+    .phone-outer{
+      width: 33.2%;
+      margin-right:5%;
+    }
+    .case-intro{
+      width: 61.8%;
+      @include font-size(18px);
+      text-align:left;
+      font-style:italic;
+      line-height:1.5;
+      &:first-letter{
+        color:$color01;
+        @include font-size(36px);
+        font-style:italic;
+      }
+    }
+    &.in-view{
+      animation-name: fadeInRight;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+  }
+  .technique{
+    .label{
+      color:$color01;
+      @include font-size(36px);
+      font-style:italic;
+    }
+  }
+  .case-compare{
+    width:100%;
+    .case-before,.case-after{
+      width:100%;
+      position:relative;
+      .div-img{
+        margin-left:0;
+        margin-top:-100px;
+        width:61.8%;
+        max-height:240px;
+        overflow:hidden;
+        border:5px solid $color01;
+        box-shadow:2px 2px 10px #666;
+        img{
+          max-width:100%;
+        }
+        &:nth-child(1){
+          margin-top:0px!important;
+        }
+        &:nth-child(even){
+          margin-left:auto;
+          animation-name: flutter;
+          animation-duration: 5s;
+          animation-fill-mode: both;
+          animation-iteration-count:infinite;
+        }
+        &:nth-child(odd){
+          margin-right:auto;
+          animation-name: flutter;
+          animation-duration: 5s;
+          animation-fill-mode: both;
+          animation-iteration-count:infinite;
+        }
+      }
+    }
+  }
+  .Limelight{  
+    font-family: $fontLabel;
+    font-weight:900;
+  }
+  .tag{
+    max-width: 320px;
+    margin:auto;
+    font-family: $fontLabel;
+    font-weight: 600;
+    line-height: 0.7;
+  }
+  .svg-icon{
+    width:50px;
+    height:auto;
+    margin-right:25px;
+  }
+  #bootstrap text{
+    @include font-size(18px);
+  }
+}

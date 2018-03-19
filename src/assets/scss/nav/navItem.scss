@@ -1,0 +1,66 @@
+@import "../config.scss";
+@import "../animate.scss";
+@keyframes breathe {
+    0% {r: 9;}
+    50% {r: 10;}
+    100% {r: 9;}
+}
+@keyframes breathe-stroke {
+    0% {stroke: #fff;}
+    100% {stroke: $color01*1.2;}
+}
+
+.router-link-exact-active{
+	.nav-item{
+		color:$color01*1.2;
+		.symbol{
+			.o-c{
+				stroke:$color01*1.2;
+			}
+			.i-c{
+				fill:#fff;
+			}
+		}
+	}
+}
+.nav-item{
+	cursor:pointer;
+	height:30px;
+  	@media ($md) {
+		margin-bottom:20px;
+	}
+	.nav-item-text-outer{
+  		@media ($md) {
+  			opacity: 0;
+  			&.fi{
+		        animation-duration: 1s;
+		        animation-fill-mode: both;
+		        animation-name:fadeIn;
+  			}
+  		}
+	}
+	.nav-item-text{
+		text-transform: uppercase;
+		width:60px;
+		display:block;
+		&.hover{
+			//color:#fff;
+		}
+	}
+	.symbol{
+		width:32px;
+		height:28px;
+		margin-left: 10px;
+		.i-c{
+			fill:$color01;
+		}
+		.o-c{
+			stroke:#fff;
+			r:9;
+		    &.breathe{
+		    	//animation: breathe-stroke .5s infinite;
+		    	animation: breathe 2s infinite;
+		    }
+		}
+	}
+}

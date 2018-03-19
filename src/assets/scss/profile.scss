@@ -1,0 +1,80 @@
+@import "config.scss";
+#profile{
+	text-align:left;
+	width:100%;
+	h1{
+		padding:30px;
+        animation-duration: 1s;
+        animation-delay:.5s;
+        animation-fill-mode: both;
+        animation-name:fadeIn;
+	}
+	.section-title{
+		font-family: $fontHead;
+		font-weight: 600;
+		background-color:#fff;
+		color:$color01;
+		font-style: italic;
+		@include font-size(18px);
+		padding:10px 0px;
+		padding-right:20px;
+		text-align: right;
+		width:50%;
+
+        animation-duration: 1s;
+        animation-delay:.5s;
+        animation-fill-mode: both;
+        animation-name:fadeIn;
+	}
+	.company,.content{
+		padding-left:30px;
+	}
+
+	.job-title,.education-title{
+        animation-duration: 1s;
+        animation-delay:1s;
+        animation-fill-mode: both;
+        animation-name:fadeIn;
+    }
+	.job-title{
+		display:flex;
+		color:$color01;
+		@include font-size(26px);
+	}
+	h3{
+		font-family: $fontLabel;
+		font-weight: 600;
+		@include font-size(18px);
+		display: flex;
+		flex-wrap: wrap;
+        animation-duration: 1s;
+        animation-delay:1.5s;
+        animation-fill-mode: both;
+        animation-name:fadeIn;
+		strong{
+			padding:10px 0px;
+		}
+		em{
+			font-style: normal;
+			width:40%;
+			margin-left:auto;
+			background-color:#fff;
+			color:$color01;
+			padding:10px 0px;
+			padding-left:20px;
+			text-align: left;
+		}
+	}
+	p,li{
+		max-width: 920px;
+        animation-duration: 1s;
+        animation-delay:2s;
+        animation-fill-mode: both;
+        animation-name:fadeIn;
+	}
+	.education-title{
+		color:$color01;
+		@include font-size(18px);
+		margin-bottom: 10px;
+	}
+}

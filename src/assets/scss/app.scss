@@ -1,0 +1,302 @@
+@import "config.scss";
+$touchColor:#eee;
+$touchHeight:90px;
+
+@keyframes mobileHeader {
+  from {
+    width: 120px;
+    height: 100%;
+  }
+  to {
+    width: 100vw;
+    height: 50px;
+  }
+}
+@keyframes deskTopHeader {
+  from {
+    width: 100vw;
+    height: 50px;
+  }
+  to {
+    width: 120px;
+    height: 100%;
+  }
+}
+@keyframes deskTopHeaderExpend {
+  from {
+    width: 60px;
+    height: 100%;
+  }
+  to {
+    width: 120px;
+    height: 100%;
+  }
+}
+@keyframes deskTopHeaderShrink {
+  from {
+    width: 60px;
+    height: 100%;
+  }
+  to {
+    width: 120px;
+    height: 100%;
+  }
+}
+@keyframes mobileNav {
+  from {
+    width: 120px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes deskTopNav {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 120px;
+  }
+}
+@keyframes touchUp {
+  0% {
+    transform:translateY(20px);
+    opacity:0.4;
+  }
+  100% {
+    transform:translateY(-1*$touchHeight);
+    opacity:1;
+  }
+}
+@keyframes touchDown {
+  0% {
+    transform:translateY(-1*$touchHeight);
+    opacity:1;
+  }
+  100% {
+    transform:translateY(20px);
+    opacity:0.4;
+  }
+}
+@keyframes touchInview {
+  0% {
+    transform:translateY(30px);
+  }
+  100% {
+    transform:translateY(10px);
+  }
+}
+.main-container{
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color:$color02;
+  position: relative;
+  height:100vh;
+}
+.app-bg{
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  width:100vw;
+  min-height:100vh;
+  height:100%;
+  top:0;
+  left:0;
+  z-index: 0;
+}
+#app {
+  position: relative;
+  width:100vw;
+  top:0;
+  left:0;
+  z-index: 1;
+  font-family: $fontBody;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  @include font-size(16px);
+  flex-wrap: wrap;
+  header{
+    font-family: $fontHead;
+    width:120px;
+    @media (min-width:768px) {
+      max-width: 50px;
+      &.expand{
+        max-width: 100%;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name:deskTopHeaderExpend;
+      }
+      &.shrink{
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name:deskTopHeaderShrink;
+      }
+    }
+    max-width: 100%;
+    background-color:rgba(2,2,2,.7);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:3;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name:mobileHeader;
+    @media ($md) {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name:deskTopHeader;
+    }
+    nav{
+      width:100%;
+      margin: auto;
+      display:flex;
+      justify-content: space-around!important;
+      align-items:center;
+      @media ($md) {
+        display: block;
+        width:120px;
+      }
+    }
+  }
+  footer{
+    width:100%;
+    @media ($md) {
+      width:calc(100% - 50px);
+      margin-left: 50px;
+    }
+    height:0px;
+    .contact-container{
+      width:100%;
+      margin: auto;
+      svg{
+        fill:$color02;
+        stroke:$color02;
+        stroke-width:1;
+      }
+      .send-outer{
+        height:38vh;
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        padding:5px;
+        border:0;
+        color:#fff;
+        display: flex;
+        flex-wrap: wrap;
+        svg{
+          fill:$color02;
+          stroke:$color02;
+          stroke-width:0.5;
+          margin-left: auto;
+        }
+        textarea{
+          box-shadow: 0px 0px 20px #000 inset;
+          background-color: $color02;
+          width: 100%;
+          height:calc(100% - 40px);
+          padding:15px;
+          border:0;
+          color:#fff;
+          &:focus {
+            background: none repeat scroll 0 0 $color02;
+            outline-width: 0;
+            border:0;
+          }
+        }
+      }
+    }
+    .touch-me{
+      width:100%;
+      height:1*$touchHeight;
+      background-color:$touchColor;
+      box-shadow: 0px 0px 20px #000;
+      transform:translateY(20px);
+      opacity: 0.4;
+      &.touchUp{
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+        animation-name: touchUp;
+      }
+      &.touchDown{
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+        animation-name: touchDown;
+      }
+      .touch{
+        width:150px;
+        height:70px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow:hidden;
+        z-index: 0;
+        position: absolute;
+        left:calc(50% - 75px);
+        top:-60px;
+        .text{
+          display: block;
+          font-family: $fontLabel;
+          left:0;
+          width:100%;
+          @include font-size(22px);
+          font-weight:600;
+          line-height: 1;
+          color:$color02;
+          margin-top: 10px;
+          &:first-child{
+            margin-top: 17px;
+          }
+        }
+        &:before{
+          position: absolute;
+          top:5px;
+          left:0;
+          content:"";
+          display: block;
+          width:150px;
+          height:150px;
+          background-color: $touchColor;
+          border-radius: 50% 50% 0% 0%;
+          box-shadow: 0px 0px 5px #000;
+          z-index: -1;
+        }
+        &:after{
+          position: absolute;
+          top:60px;
+          left:0;
+          content:"";
+          display: block;
+          width:150px;
+          height:0px;
+          background-color: $touchColor;
+          z-index: 1;
+        }
+      }
+    }
+  }
+  .viewbox-outer{
+    width:100vw;
+    min-height:100vh;
+  }
+  .page-enter {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+    @media ($md) {
+      animation-name: fadeInRight;
+    }
+  }
+  .page-leave {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeOutLeft;
+    @media ($md) {
+      animation-name: fadeOutLeft;
+    }
+  }
+
+}

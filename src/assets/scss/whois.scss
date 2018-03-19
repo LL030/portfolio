@@ -1,0 +1,51 @@
+@import "config.scss";
+@import "animate.scss";
+@import "plugin/vuetyper.scss";
+.content-fullpage{
+	width:80%;
+	margin:0 auto;
+	.intro{
+		.vue-typer{
+		}
+		width: 100%;
+		padding-top: 30px;
+		@media ($md) {
+			padding-top: 0px;
+		}
+		p{
+	        animation-duration: 1s;
+		    animation-delay:0.5s;
+	        animation-fill-mode: both;
+	        animation-name:fadeIn;
+
+			 font-family: $fontBody;
+			 font-weigth:1200;
+			 @include font-size(28px);
+			 width: 100%;
+			 text-align: left;
+			 line-height: 1.2;
+			 margin-bottom:32px;
+			 .high-light{
+			 	text-transform: uppercase;
+			 	font-family: $fontLabel;
+			 	color:$color01;
+			 	opacity:0;
+			 	@include font-size(42px);
+		        animation-duration: 1s;
+		        animation-delay:1s;
+		        animation-fill-mode: both;
+		        animation-name:fadeIn;
+			 }
+			 .underline{
+			 	color:$color01;
+			 	text-decoration: underline;
+			 	text-decoration-color:$color01;
+			 	text-decoration-style:wavy;
+		        animation-duration: 1s;
+		        animation-delay:1.8s;
+		        animation-fill-mode: both;
+		        animation-name:fadeIn;
+			 }
+		}
+	}
+}

@@ -1,0 +1,68 @@
+$color01:#c0a062;
+$color02:#3c3c3c;
+$md:'min-width: 768px';
+$md:'min-width: 768px';
+$fontBody:'Lato', sans-serif;
+$fontHead:'Raleway', sans-serif;
+$fontLabel:'Rajdhani', sans-serif;
+@mixin font-size($fontSize) {
+	font-size: $fontSize - 4px;
+	@media ($md) {
+		font-size: $fontSize;
+	}
+}
+@import "animate.scss";
+/* https://www.flaticon.com/packs/sketched-social */
+.content-fullpage{
+	min-height:100vh;
+	display:flex;
+	align-items:center;
+	flex-wrap:wrap;
+	&:first-child{
+		min-height:calc(100vh - 30px);
+	}
+}
+.hidden{
+	display: none;
+}
+
+a{
+	color: inherit;
+	&:focus, &:hover {
+	  color: inherit;
+	  text-decoration: none;
+	}
+}
+.viewport{
+	margin-left:auto;
+}
+.viewbox{
+	border-top:2px solid $color01;
+	border-left:10px solid $color01;
+	margin-left: auto;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	width:100vw;
+    max-width:1440px;
+	background: radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(http://www.pilakuma.com//lib/image/portfolio/grid.png) repeat top left;
+	@media ($md) {
+	 width:calc(100vw - 80px);
+	}
+}
+
+  .page-enter {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+    @media ($md) {
+      animation-name: fadeInRight;
+    }
+  }
+  .page-leave {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fadeOutLeft;
+    @media ($md) {
+      animation-name: fadeOutLeft;
+    }
+  }
