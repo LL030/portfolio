@@ -45,7 +45,7 @@
 </template>
 
 <script>
-var path = 'https://s3-ap-northeast-1.amazonaws.com/pilakuma/'; 
+var path = 'https://pilakuma.s3.ap-southeast-1.amazonaws.com/'; 
 var showcases = [
   {
     wTitle:'SmartTone WebSite Revamp',
